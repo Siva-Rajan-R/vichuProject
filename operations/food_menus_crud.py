@@ -88,7 +88,7 @@ class FoodMenusCrud(__FoodMenusCrudInputs):
             food_menu=cursor.execute(
                 """
                 SELECT * FROM hostel_food_menus WHERE day==?
-                """,(day,)
+                """,(day.value,)
             )
 
             return food_menu.fetchone()

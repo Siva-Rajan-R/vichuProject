@@ -15,6 +15,7 @@ class StudentCrud(__StudentCrudInput):
         try:
             cur=cursor
             print(self.student_name,self.student_age,self.student_dob,self.parents_number)
+            print(type(self.student_name),type(self.student_age),type(self.student_dob),type(self.parents_number))
             cur.execute(
                 """
                 CREATE TABLE IF NOT EXISTS students(
@@ -35,7 +36,7 @@ class StudentCrud(__StudentCrudInput):
             )
 
             connection.commit()
-
+            print("student added successfully")
             return "student added successfully"
         
         except Exception as e:
